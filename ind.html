@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Divine International Global Partnership and Energy Limited - Professional oil and gas services across Nigeria with over 22 years of experience">
+    <!-- link for remixicons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <!-- link for google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>Divine Global Partnership Energy</title>
+    <style>
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  --first-color: hsl(18, 95%, 55%);
+  --second-color: hsl(42, 98%, 52%);
+  --first-gradient: linear-gradient(
+    90deg,
+    hsl(18, 95%, 55%),
+    hsl(18, 98%, 64%)
+  );
+  --title-color: hsl(255, 12%, 12%);
+  --text-color: hsl(225, 12%, 24%);
+  --text-color-light:hsl(0, 0%, 99%);
+  --body-color: hsl(0, 0%, 100%);
+  --container-color: hsl(0, 0%, 100%);
+  --white-color: hsl(0, 0%, 100%);
+  --black-color: hsl(255, 20%, 10%);
+  --gray-border: hsl(255, 6%, 90%);
+  --black-border: hsl(255, 10%, 20%);
+
+  /*========== Font and typography ==========*/
+  --body-font: "Montserrat", sans-serif;
+  --big-font-size: 2.25rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1150px) {
+  :root {
+    --big-font-size: 3.5rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding-block: 5rem 1rem;
+}
+
+.section__title,
+.section__subtitle {
+  text-align: center;
+}
+
+.section__title {
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-bold);
+  margin-bottom: 1.5rem;
+}
+
+.section__subtitle {
+  display: block;
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--second-color);
+  margin-bottom: 0.5rem;
+}
+
+.main {
+  overflow: hidden;
+}
+
+/*=============== HEADER & NAV ===============*/
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  z-index: var(--z-fixed);
+  transition: background-color .4s;
+}
+
+.nav {
+  position: relative;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 1.8rem;
+}
+
+.nav__logo-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav__logo-container span{
+  text-align: left;
+  padding-left: 1.1rem;
+  padding-top: 1.1rem;
+  font-size: 1rem;
+  font-family: var(--font-semi-bold);
+  color: rgb(228, 228, 228);
+}
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+  width: 3.5rem;
+  margin-top: 1rem;
+}
+
+.nav__logo img {
+  width: 100%;
+  height: auto;
+}
+
+.nav__toggle,
+.nav__close {
+  font-size: 1.5rem;
+  color: var(--white-color);
+  cursor: pointer;
+  transition: color 0.4s;
+}
+
+/* Dropdown Styles */
+.dropdown {
+  position: relative;
+}
+
+.dropdown__content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--white-color);
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding: 1rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown__content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown__item {
+  padding: 0.75rem 1.5rem;
+  color: var(--text-color);
+  transition: background-color 0.3s;
+  border-bottom: 1px solid var(--gray-border);
+}
+
+.dropdown__item:last-child {
+  border-bottom: none;
+}
+
+.dropdown__item:hover {
+  background-color: hsl(18, 95%, 95%);
+  color: var(--first-color);
+}
+
+.dropdown__arrow {
+  margin-left: 0.5rem;
+  transition: transform 0.3s;
+}
+
+.dropdown:hover .dropdown__arrow {
+  transform: rotate(180deg);
+}
+
+/* Navigation for mobile devices */
+@media only screen and (max-width: 1150px) {
+  .nav__menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background-color: var(--black-color);
+    width: 80%;
+    height: 100%;
+    padding: 7.5rem 3.5rem 0;
+    border-left: 0.2rem solid var(--black-border);
+    transition: right 0.4s;
+  }
+  
+  .nav__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4rem;
+  }
+
+  .nav__link{
+    color: var(--text-color-light);
+    font-weight: var(--font-semi-bold);
+    transition: color .4s
+  }
+  
+  .nav__link:hover{
+    color: var(--first-color)
+  }
+
+  .nav__close{
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+  }
+
+  .dropdown__content {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    background-color: transparent;
+    padding-left: 1rem;
+    margin-top: 1rem;
+  }
+
+  .dropdown__item {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    color: var(--text-color-light);
+  }
+
+  .dropdown__item:hover {
+    background-color: transparent;
+    color: var(--first-color);
+  }
+}
+
+.show-menu{
+  right: 0;
+}
+
+.bg-header{
+  background-color: var(--body-color);
+  box-shadow: 0 .4rem 1.6rem hsla(255, 90%, 8%, .1);
+}
+
+.bg-header .nav__toggle{
+  color: var(--title-color);
+}
+
+.bg-header .nav__link {
+  color: var(--text-color);
+}
+
+.bg-header .dropdown__arrow {
+  color: var(--text-color);
+}
+
+.active-link{
+  color: var(--first-color);
+}
+
+/*=============== HOME ===============*/
+.home{
+  position: relative;
+  background: var(--black-color);
+}
+
+.home__container{
+  position: relative;
+  row-gap: 3rem;
+  padding-block: 2.5rem 6rem;
+}
+
+.home__content{
+  row-gap: 2.5rem;
+}
+
+.home__data{
+  text-align: center;
+}
+
+.home__title{
+  color: var(--white-color);
+  font-size: var(--big-font-size);
+  font-weight: var(--font-bold);
+  margin-bottom: 1rem;
+}
+
+.home__description{
+  margin-bottom: 2.5rem;
+  color: var(--text-color-light);
+}
+
+.home__buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.home__info{
+  display: flex;
+  justify-content: center;
+  column-gap: 4.5rem;
+}
+
+.home__info-title{
+  color: var(--second-color);
+  font-size: var(--big-font-size);
+  font-weight: var(--font-bold);
+  margin-bottom: .5rem;
+}
+
+.home__info-description{
+  font-size: var(--small-font-size);
+  color: var(--white-color);
+}
+
+.home__images{
+  position: relative;
+  justify-content: center;
+}
+
+.home__img-1{
+  width: 250px;
+  margin-left: 3.5rem;
+}
+
+.home__img-2{
+  width: 150px;
+  border: .5rem solid var(--black-color);
+  position: absolute;
+  left: 0;
+  bottom: -3.5rem;
+}
+
+.home__lines{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right;
+}
+
+/*=============== BUTTON ===============*/
+.btn{
+  display: inline-flex;
+  background: var(--first-gradient);
+  color: var(--white-color);
+  font-weight: var(--font-semi-bold);
+  padding: 1rem 2rem;
+  transition: box-shadow .4s;
+  border-radius: 4px;
+}
+
+.btn:hover{
+  box-shadow: 0 .8rem 3.2rem hsla(18,95%,55%,.3);
+  color: var(--white-color);
+}
+
+.button__link{
+  display: flex;
+  align-items: center;
+  column-gap: .25rem;
+  color: var(--first-color);
+}
+
+.button__link span{
+  font-weight: var(--font-semi-bold);
+}
+
+.button__link i{
+  font-size: 1.5rem;
+  color: var(--first-color);
+  transition: transform .4s;
+}
+
+.button__link:hover i{
+  transform: translateX(.25rem);
+}
+
+/*=============== PAGE CONTENT ===============*/
+.page {
+  display: none;
+  padding-top: calc(var(--header-height) + 2rem);
+  min-height: 100vh;
+}
+
+.page.active {
+  display: block;
+}
+
+.page-header {
+  background: var(--black-color);
+  color: var(--white-color);
+  padding: 4rem 0 2rem;
+  text-align: center;
+}
+
+.page-header h1 {
+  color: var(--white-color);
+  font-size: var(--big-font-size);
+  margin-bottom: 1rem;
+}
+
+.page-content {
+  padding: 4rem 0;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.service-card {
+  background: var(--container-color);
+  border: 2px solid var(--gray-border);
+  padding: 2.5rem 2rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  border-color: var(--first-color);
+  transform: translateY(-5px);
+}
+
+.service-card i {
+  font-size: 3rem;
+  color: var(--first-color);
+  margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+  margin-bottom: 1rem;
+  color: var(--title-color);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.team-card {
+  background: var(--container-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+}
+
+.team-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.team-info {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--container-color);
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--gray-border);
+  border-radius: 4px;
+  font-family: var(--body-font);
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--first-color);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/*=============== RESPONSIVE ===============*/
+@media screen and (min-width: 1150px) {
+  .container {
+    margin-inline: auto;
+  }
+  
+  .nav {
+    height: calc(var(--header-height) + 2rem);
+  }
+  
+  .nav__logo {
+    margin-top: 0;
+  }
+  
+  .nav__toggle,
+  .nav__close {
+    display: none;
+  }
+  
+  .nav__menu {
+    width: initial;
+  }
+  
+  .nav__list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 4rem;
+  }
+  
+  .bg-header .nav__link {
+    color: var(--text-color);
+  }
+  
+  .bg-header .active-link,
+  .bg-header .nav__link:hover {
+    color: var(--first-color);
+  }
+}
+
+/* Hide other sections when pages are active */
+.main.hide-sections .home,
+.main.hide-sections .about,
+.main.hide-sections .services,
+.main.hide-sections .projects,
+.main.hide-sections .contact {
+  display: none;
+}
+
+/* Show all sections when on home */
+.main.show-all .home,
+.main.show-all .about,
+.main.show-all .services,
+.main.show-all .projects,
+.main.show-all .contact {
+  display: block;
+}
+
+/*=============== ABOUT ===============*/
+.about__container{
+  row-gap: 8rem;
+}
+.about__data{
+  text-align: center;
+}
+.about__description{
+  margin-bottom: 2rem;
+}
+.about__list{
+  text-align: initial;
+  grid-template-columns: repeat(2,13rem);
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+.about__list-item{
+  display: flex;
+  column-gap: .5rem;
+  color: var(--title-color);
+}
+
+.about__list-item i{
+  font-size: 1.25rem;
+  color: var(--first-color);
+}
+.about__images{
+  position: relative;
+  justify-self: center;
+}
+.about__img-1{
+  width: 20rem;
+  border: .5rem solid var(--body-color);
+  position: absolute;
+  top: -5rem;
+  left: 8rem;
+  z-index: 2;
+}
+.about__img-2{
+  width: 25rem;
+  margin-right: 2.5rem;
+}
+
+/*=============== SERVICES ===============*/
+.services{
+  position:relative;
+}
+.services__container{
+  position: relative;
+  row-gap: 3rem;
+}
+.services__data{
+  text-align: center;
+}
+.services__description{
+  margin-bottom: 2rem;
+}
+.services__card{
+  width: 16rem;
+  background-color: var(--container-color);
+  border: .2rem solid var(--gray-border);
+  padding: 2rem 1rem 3.5rem;
+  transition: border-color .4s;
+}
+
+.services__card:hover{
+  border-color: var(--first-color);
+}
+.services__icon{
+  width: 7rem;
+  height: 7rem;
+  background-color: var(--black-color);
+  color: var(--white-color);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+.services__title{
+  font-size: var(--h2-font-size);
+  margin-bottom: .5rem;
+}
+.services__shape{
+  position: absolute;
+  width: 100%;
+  height: 24.5rem;
+  background-color: var(--black-border);
+  bottom: 0;
+  left: 0;
+}
+
+/*=============== PROJECTS ===============*/
+.projects{
+  background-color: var(--black-color);
+}
+
+.projects .section__title{
+  color: var(--white-color);
+}
+.projects__container{
+  padding-block: 1.5rem 3rem;
+}
+.projects__card{
+  background-color: var(--container-color);
+  border: .2rem solid transparent;
+  background-clip: content-box;
+  transition: border-color .4s;
+}
+.projects__card:hover{
+  border-color: var(--first-color);
+}
+.projects__data{
+  padding: 1.5rem 1rem 3rem;
+}
+.projects__title{
+  font-size: var(--h2-font-size);
+  margin-block: .5rem  ;
+}
+.projects__date{
+  display: block;
+  font-weight: var(--font-medium);
+  color: var(--title-color);
+  margin-bottom: 1.5rem;
+}
+
+/*=============== CONTACT ===============*/
+.contact__container{
+  row-gap: 3rem;
+  padding-block: 1.5rem 3rem;
+}
+
+.contact__img{
+  width: 32rem;
+  justify-content: center;
+}
+
+.contact__data{
+  grid-template-columns: 23rem;
+  justify-content: center;
+  row-gap: 1.5rem;
+}
+
+.contact__card{
+  background-color: var(--container-color);
+  border: .2rem solid var(--gray-border);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  transition: border-color .4s;
+}
+
+.contact__card:hover{
+  border-color: var(--first-color);
+}
+.contact__icon{
+  width: 4.8rem;
+  height: 4.8rem;
+  background-color: var(--black-color);
+  color: var(--white-color);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+  margin: 0 auto 1.25rem;
+}
+.contact__title{
+  font-size: var(--h2-font-size);
+  margin-bottom: .5rem;
+}
+.contact__info{
+  font-style: normal;
+}
+.contact__social{
+  display: flex;
+  justify-content: center;
+  column-gap: 1rem;
+}
+.contact__social-link{
+  font-size: 1.5rem;
+  color: var(--first-color);
+  transition: transform .4s;
+}
+
+.contact__social-link:hover{
+  transform: translateY(-.25rem);
+}
+
+/*=============== FOOTER ===============*/
+.footer{
+  background-color: var(--black-color);
+  color: var(--text-color-light);
+  padding-block: 3.5rem 2rem;
+}
+.footer__container{
+  row-gap: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: .1rem solid var(--black-border);
+}
+.footer__logo{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  row-gap: 2rem;
+  margin-bottom: 1rem;
+}
+.footer__logo img{
+  width: 2.4rem;
+  margin-right: .4rem;
+}
+.footer__logo span{
+  color: var(--white-color);
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-semi-bold);
+}
+.footer__description{
+  margin-block: 1rem;
+}
+.footer__email,
+.footer__info{
+  font-style: normal;
+}
+.footer__content{
+  grid-template-columns: repeat(2, max-content);
+  gap: 4rem 3rem ;
+}
+.footer__title{
+  font-size: var(--h3-font-size);
+  color: var(--white-color);
+  margin-bottom: 1rem;
+}
+.footer__links,
+.footer__list{
+  display: grid;
+  row-gap: .5rem;
+}
+.footer__link{
+  color: var(--text-color-light);
+  transition: all .4s;
+}
+.footer__link:hover{
+  color: var(--first-color);
+}
+.footer__social{
+  display: flex;
+  column-gap: 1rem;
+}
+.footer__social-link{
+  font-size: 1.5rem;
+  color: var(--first-color);
+  transition: transform .4s;
+}
+.footer__social-link:hover{
+  transform: translateY(-.25rem);
+}
+.footer__copy{
+  display: block;
+  text-align: center;
+  font-size: var(--small-font-size);
+  margin-top: 4rem;
+}
+
+/*=============== SCROLL UP ===============*/
+.scrollup{
+  position: fixed;
+  right: 1rem;
+  bottom: -50%;
+  background-color: var(--body-color);
+  box-shadow: 0 .4rem 1.6rem hsla(255, 90%, 8%, .15);
+  color: var(--title-color);
+  display: inline-flex;
+  padding: 6px;
+  font-size: 1.25rem;
+  z-index: var(--z-tooltip);
+  transition: bottom .4s, transform .4s;
+  border-radius: 4px;
+}
+.scrollup:hover{
+  transform: translateY(-.5rem);
+}
+
+.show-scroll{
+  bottom: 3rem;
+}
+    </style>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <div class="nav__logo-container">
+          <a href="#" class="nav__logo" onclick="showHome()">
+            <img src="/api/placeholder/60/60" alt="Company Logo">
+          </a>
+          <span>Divine International Global<br>Partnership And Energy<br> Limited</span>
+        </div>
+
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li><a href="#" class="nav__link active-link" onclick="showHome()">Home</a></li>
+            
+            <li class="dropdown">
+              <a href="#" class="nav__link">About Us <i class="ri-arrow-down-s-line dropdown__arrow"></i></a>
+              <div class="dropdown__content">
+                <a href="#" class="dropdown__item" onclick="showPage('about-company')">Our Company</a>
+                <a href="#" class="dropdown__item" onclick="showPage('team')">Our Team</a>
+                <a href="#" class="dropdown__item" onclick="showPage('history')">Company History</a>
+                <a href="#" class="dropdown__item" onclick="showPage('vision-mission')">Vision & Mission</a>
+              </div>
+            </li>
+            
+            <li class="dropdown">
+              <a href="#" class="nav__link">Services <i class="ri-arrow-down-s-line dropdown__arrow"></i></a>
+              <div class="dropdown__content">
+                <a href="#" class="dropdown__item" onclick="showPage('rotating-equipment')">Rotating Equipment</a>
+                <a href="#" class="dropdown__item" onclick="showPage('overhaul-services')">Overhaul & Installation</a>
+                <a href="#" class="dropdown__item" onclick="showPage('maintenance')">Technical Maintenance</a>
+                <a href="#" class="dropdown__item" onclick="showPage('all-services')">All Services</a>
+              </div>
+            </li>
+            
+            <li class="dropdown">
+              <a href="#" class="nav__link">Projects <i class="ri-arrow-down-s-line dropdown__arrow"></i></a>
+              <div class="dropdown__content">
+                <a href="#" class="dropdown__item" onclick="showPage('current-projects')">Current Projects</a>
+                <a href="#" class="dropdown__item" onclick="showPage('completed-projects')">Completed Projects</a>
+                <a href="#" class="dropdown__item" onclick="showPage('case-studies')">Case Studies</a>
+              </div>
+            </li>
+            
+            <li><a href="#" class="nav__link" onclick="showPage('contact')">Contact Us</a></li>
+          </ul>
+
+          <div class="nav__close" id="nav-close">
+            <i class="ri-close-large-line"></i>
+          </div>
+        </div>
+
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="ri-menu-fill"></i>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
