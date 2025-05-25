@@ -27,14 +27,20 @@ const linkAction = ()=>{
 navLink.forEach(n => n.addEventListener("click",linkAction));
 
 /*=============== CHANGE BACKGROUND HEADER ===============*/
-const bgHeader = () =>{
+const bgHeader = () => {
   const header = document.getElementById('header');
-  //add a class if the bottom offset is greater than 50 of the viewport
-  this.scrollY >= 50 ? header.classList.add('bg-header')
-  : header.classList.remove('bg-header')
-}
-window.addEventListener('scroll',bgHeader);
-bgHeader()
+  const logotxt = document.getElementById('logo-txt');
+
+  this.scrollY >= 50 
+    ? (header.classList.add('bg-header'), 
+       logotxt.classList.add('logo__colored'))
+    : (header.classList.remove('bg-header'), 
+       logotxt.classList.remove('logo__colored'));
+};
+
+window.addEventListener('scroll', bgHeader);
+bgHeader();
+
 
 
 /*=============== SWIPER SERVICES ===============*/ 
